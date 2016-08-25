@@ -6,9 +6,14 @@ export default React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     return (
-    	<div>Hello from the Guess game!
-    		<Link to="/play">Start</Link>
-    	</div>
+    	<div className="jumbotron">
+	      <div className="container text-center">
+	        <h1>Filestack Guess game</h1>
+	        <p>By applying face detection Filestack can blur faces. Try the game!</p>
+	        <p><Link className="btn btn-filestack btn-lg" to="/play" role="button">Start</Link></p>
+	      </div>
+	    </div>
+    	
     );
   }
 });

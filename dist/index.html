@@ -1,7 +1,47 @@
 <!DOCTYPE html>
-<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="guess-game-app">
+	<meta name="author" content="Samuele Zaza">
+	<meta name="mail" content="zaza.samuele@gmail.com">
+	<link rel="icon" href="https://assets.filestackapi.com/web/c3417dc/img/favicon.ico">
+	<title>Guess game</title>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<link href="./css/jumbotron.css" rel="stylesheet">
+	<link href="./css/main.css" rel="stylesheet">
+	<link href="./css/toastr.min.css" rel="stylesheet">
+	
+</head>
 <body>
-  <div id="app"></div>
-  <script src="bundle.js"></script>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Guess game</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+      <div class="row" id="app"></div>
+      <hr>
+      <footer>
+        <p>© 2016 Samuele Zaza, Filestack Tech Evangelist.</p>
+      </footer>
+    </div>
+	
+	<script src="bundle.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="./js/toastr.min.js"></script>
 </body>
 </html>

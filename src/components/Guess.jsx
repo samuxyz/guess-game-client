@@ -10,23 +10,25 @@ export default React.createClass({
   },
   guess: function(name) {
     if(name === this.props.guess.name) {
-      alert("Great! You are right.")
+      toastr.success("Great! You are right.")
       this.props.next();
     }
     else {
-      alert("Sorry, you are wrong!");
+      toastr.error('Sorry wrong choice!');
     }
   },
   render: function() {
     return <div className="guessing">
-      <div>
-        <img src={this.getImg()} style={{width:500 + 'px'}}/>
+      <div className="thumbnail">
+        <img src={this.getImg()} style={{width:300 + 'px'}}/>
       </div>
+      <div className="btn-group" role="group" aria-label="...">
       {this.getName().map(entry =>
-        <button key={entry} onClick={() => this.guess(entry)}>
+        <button type="button" className="btn btn-default" key={entry} onClick={() => this.guess(entry)}>
           <h1>{entry}</h1>
         </button>
       )}
+      </div>
     </div>;
   }
 });
