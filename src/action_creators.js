@@ -11,3 +11,11 @@ export function next() {
     type: 'NEXT'
   };
 }
+
+export function guessed(character) {
+	return {
+    meta: {remote: true},
+		type: 'HAS_GUESSED',
+		character
+	}
+}

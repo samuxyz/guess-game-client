@@ -19,7 +19,8 @@ export const Guessing = React.createClass({
 function mapStateToProps(state) {
   return {
     guess: state.toJS().guess,
-    winner: state.toJS().winner
+    winner: state.toJS().winner,
+    hasGuessed: state.toJS().hasGuessed
   };
 }
 

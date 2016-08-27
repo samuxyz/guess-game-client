@@ -10,11 +10,13 @@ import {expect} from 'chai';
 
 describe('Guessing', () => {
   it('renders the character with buttons and picture', () => {
-  	const guess = {picture: "http://www.uglypufferfish.com/wp-content/uploads/2009/10/Aragorn.jpg", option1: "Legolas", option2: "Aragorn", name: "Aragorn"};
+  	const guess = {picture: "wQhAl91Q1Cu040HSCcbg", option1: "Legolas", option2: "Aragorn", name: "Aragorn"};
     const component = renderIntoDocument(
       <Guessing guess={guess} />
     );
     const buttons = scryRenderedDOMComponentsWithTag(component, 'button');
+    const filestackUrl = "https://process.filestackapi.com";
+    const blurProcessOptions = "blur_faces=faces:1,a:15,type:oval,buffer:150,blur:20";
 
     expect(buttons.length).to.equal(2);
     expect(buttons[0].textContent).to.equal('Legolas');
@@ -22,7 +24,7 @@ describe('Guessing', () => {
 
     const picture = scryRenderedDOMComponentsWithTag(component, 'img');
     expect(picture.length).to.equal(1);
-    expect(picture[0].src).to.equal(guess.picture);
+    expect(picture[0].src).to.equal(filestackUrl + "/" + blurProcessOptions + "/" +guess.picture);
   });
   
   it('renders just the winner when there is one', () => {
