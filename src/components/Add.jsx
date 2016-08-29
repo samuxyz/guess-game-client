@@ -6,7 +6,6 @@ import * as actionCreators from '../action_creators';
 export const Add = React.createClass({
 	mixins: [PureRenderMixin],
 	uploadImg: function() {
-		console.log("upload");
 		filepicker.pick(
 		  function(Blob){
 		    console.log(JSON.stringify(Blob));
@@ -32,22 +31,22 @@ export const Add = React.createClass({
 					<div className="panel panel-default">
 						<div className="panel-heading">
 							<h2 className="panel-title text-center">
-							<span className="glyphicon glyphicon-upload"></span> Upload Image
+							<span className="glyphicon glyphicon-upload"></span> Upload Character
 							</h2>
 						</div>
 						<div className="panel-body">
 							<form name="imageForm" noValidate>
 								<div className="form-group">
 									<label htmlFor="name">Name</label>
-									<input id="name" type="text" className="form-control" placeholder="Enter the caption..." required/>
+									<input id="name" type="text" className="form-control" placeholder="Enter the real name..." required/>
 								</div>
 								<div className="form-group">
 									<label htmlFor="option1">option1</label>
-									<input id="option1" type="text" className="form-control" placeholder="Enter the author..." required/>
+									<input id="option1" type="text" className="form-control" placeholder="Enter the option1..." required/>
 								</div>
 								<div className="form-group">
 									<label htmlFor="option2">option2</label>
-									<input id="option2" type="text" className="form-control" placeholder="Enter the author..." required/>
+									<input id="option2" type="text" className="form-control" placeholder="Enter the option2..." required/>
 								</div>
 								<div className="form-group ">
 				          <label htmlFor="picture">File</label>

@@ -5,7 +5,7 @@ img {
 	width:100%;
 }
 .jumbotron {
-	background: #2e3b44 url("../images/jumbo.gif");
+	background: #2e3b44 url("../images/jumbo.jpg");
 	background-size: cover;
 	min-height:300px;
 	padding:7em;
@@ -15,6 +15,10 @@ img {
 }
 .jumbotron p {
 	color: #BDC5CA;
+}
+.jumbotron .container {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 40px;
 }
 .col-md-4 {
 	margin-bottom:15px;
