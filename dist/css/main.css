@@ -60,3 +60,12 @@ img {
 .navbar-nav li a{
 	color:#BAC3C9 !important;
 }
+.btn-filestack-start {
+	padding: 0.5em 6em;
+}
+.winner {
+	margin-top: 10%;
+}
+.thumbnail-winner {
+	padding:5%;
+}

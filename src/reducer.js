@@ -1,13 +1,29 @@
 import {Map} from 'immutable';
 
 function setState(state, newState) {
-  return state.merge(newState);
+  const state1 = state.merge(newState);
+  console.log("state");
+  console.log(state1.toJS());
+  return state1;
 }
 function resetGuess(state) {
+  console.log("resetGuess");
   const hasGuessed = state.get('hasGuessed');
   const currentCharacter = state.get('guess');
   if (hasGuessed && !(currentCharacter.get('name') === hasGuessed)) {
+    console.log("here!");
     return state.remove('hasGuessed');
+  } else {
+    return state;
+  }
+}
+function resetWinner(state) {
+  console.log("reset");
+  console.log(state.toJS());
+
+  const winner = state.get('winner');
+  if (winner) {
+    return state.remove('winner').remove('hasGuessed');
   } else {
     return state;
   }
@@ -41,8 +57,8 @@ export default function(state = Map(), action) {
     return resetGuess(setState(state, action.state));
   case 'HAS_GUESSED':
     return guessed(state, action.character);
-  //case 'NEXT':
-  	//return next(state);
+  case 'RESET':
+  	return resetWinner(state);
   }
   return state;
 }

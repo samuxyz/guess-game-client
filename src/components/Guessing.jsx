@@ -10,7 +10,7 @@ export const Guessing = React.createClass({
   render: function() {
     return <div className="col-md-6 col-md-offset-3">
       {this.props.winner ?
-        <Winner ref="winner" winner={this.props.winner} /> :
+        <Winner ref="winner" winner={this.props.winner} reset={this.props.reset}/> :
         <Guess {...this.props} />}
     </div>;
   }

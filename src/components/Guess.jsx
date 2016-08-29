@@ -31,7 +31,7 @@ export default React.createClass({
       </div>
       <div className="btn-group" role="group" aria-label="...">
       {this.getName().map(entry =>
-        <button key={this.props.guess.picture} type="button" className="btn btn-default" key={entry} onClick={() => this.guess(entry)}>
+        <button type="button" className="btn btn-default" key={entry} onClick={() => this.guess(entry)}>
           <h1>{entry}</h1>
         </button>
       )}

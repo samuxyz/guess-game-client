@@ -19,3 +19,18 @@ export function guessed(character) {
 		character
 	}
 }
+
+export function reset() {
+  return {
+    meta: {remote: true},
+    type: 'RESET'
+  };
+}
+
+export function add(character) {
+  return {
+    meta: {remote: true},
+    type: 'ADD',
+    character
+  }
+}
