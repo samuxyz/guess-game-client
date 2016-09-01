@@ -51,7 +51,11 @@ function guessed(state, characterName) {
 	}
 }*/
 
-export default function(state = Map(), action) {
+const INITIAL_STATE = Map({
+  guess: Map({picture: "", option1: "", option2: "", name: ""})
+});
+
+export default function(state = INITIAL_STATE, action) {
   switch (action.type) {
   case 'SET_STATE':
     return resetGuess(setState(state, action.state));

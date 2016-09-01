@@ -2,9 +2,12 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Link} from 'react-router'
 
-export default React.createClass({
-  mixins: [PureRenderMixin],
-  render: function() {
+export default class Start extends React.Component{
+  constructor(props) {
+    super(props);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+  }
+  render() {
     return (
     	<div className="jumbotron">
 	      <div className="container text-center">
@@ -17,4 +20,4 @@ export default React.createClass({
     	
     );
   }
-});
+}
