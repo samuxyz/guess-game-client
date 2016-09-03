@@ -1,11 +1,11 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-export default React.createClass({
-  getName: function() {
+export default class Guess extends React.Component{
+  getName() {
     return [this.props.guess.option1, this.props.guess.option2]; 
-  },
-  getImg: function() {
+  }
+  getImg() {
     let url = [];
     url.push("https://process.filestackapi.com");
     if(this.props.hasGuessed !== this.props.guess.name) {
@@ -13,8 +13,8 @@ export default React.createClass({
     }
     url.push(this.props.guess.picture || "");
     return url.join("/");
-  },
-  guess: function(name) {
+  }
+  guess(name) {
     if(name === this.props.guess.name) {
       toastr.success("Great! You are right.")
       this.props.guessed(name);
@@ -23,8 +23,8 @@ export default React.createClass({
     else {
       toastr.error('Sorry wrong choice!');
     }
-  },
-  render: function() {
+  }
+  render() {
     return <div className="guessing">
       <div className="thumbnail">
         <img src={this.getImg()} style={{width:300 + 'px'}}/>
@@ -38,4 +38,4 @@ export default React.createClass({
       </div>
     </div>;
   }
-});
+}

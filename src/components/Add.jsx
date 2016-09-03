@@ -3,9 +3,12 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {connect} from 'react-redux';
 import * as actionCreators from '../action_creators';
 
-export const Add = React.createClass({
-	mixins: [PureRenderMixin],
-	uploadImg: function() {
+export class Add extends React.Component {
+	constructor(props) {
+	    super(props);
+	    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+	}
+	uploadImg() {
 		filepicker.pick(
 		  function(Blob){
 		    console.log(JSON.stringify(Blob));
@@ -14,8 +17,8 @@ export const Add = React.createClass({
 		    document.getElementById('button-upload').dataset.handler = handler;
 		  }
 		);
-	},
-	submitCharacter: function() {
+	}
+	submitCharacter() {
 		const name = document.getElementById('name').value;
 		const option1 = document.getElementById('option1').value;
 		const option2 = document.getElementById('option2').value;
@@ -23,8 +26,8 @@ export const Add = React.createClass({
 		const character = {picture, option1, option2, name};
 		console.log(character);
 		this.props.add(character);
-	},
-	render: function() {
+	}
+	render() {
 		return ( <div className="container">
 			<div className="row">
 				<div className=".col-md-offset-4 media-list">
@@ -65,6 +68,6 @@ export const Add = React.createClass({
 			</div>
 		</div> );
 	}
-});
+}
 
 export const AddContainer = connect(function(){ return {}}, actionCreators)(Add);

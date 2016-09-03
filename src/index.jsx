@@ -14,10 +14,7 @@ import {AddContainer} from './components/Add';
 
 
 const socket = io(`${location.protocol}//${location.hostname}:8090`);
-socket.on('state', state => {
-	console.log(state);
-  store.dispatch(setState(state))
-}
+socket.on('state', state => store.dispatch(setState(state))
 );
 
 const createStoreWithMiddleware = applyMiddleware(

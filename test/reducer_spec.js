@@ -106,6 +106,16 @@ describe('reducer', () => {
       hasGuessed: "Aragorn"
     }));
   });
+  it('RESET the game', () =>{
+    const state = Map({
+      winner: 'you win!'
+    });
+    const action = {
+      type: 'RESET'
+    };
+    const nextState = reducer(state, action);
+    expect(nextState).to.equal(fromJS({}));
+  });
 
 
 });

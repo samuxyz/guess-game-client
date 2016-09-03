@@ -5,16 +5,19 @@ import Winner from './Winner';
 import Guess from './Guess';
 import * as actionCreators from '../action_creators';
 
-export const Guessing = React.createClass({
-  mixins: [PureRenderMixin],
-  render: function() {
+export class Guessing extends React.Component{
+  constructor(props) {
+    super(props);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+  }
+  render() {
     return <div className="col-md-6 col-md-offset-3">
       {this.props.winner ?
         <Winner ref="winner" winner={this.props.winner} reset={this.props.reset}/> :
         <Guess {...this.props} />}
     </div>;
   }
-});
+}
 
 function mapStateToProps(state) {
   return {

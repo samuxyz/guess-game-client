@@ -33,7 +33,7 @@ describe('Guessing', () => {
 	    <Guessing winner={winner} />
 	  );
 	  const buttons = scryRenderedDOMComponentsWithTag(component, 'button');
-	  expect(buttons.length).to.equal(0);
+	  expect(buttons.length).to.equal(1);
 
 	  winner = ReactDOM.findDOMNode(component.refs.winner);
 	  expect(winner).to.be.ok;
